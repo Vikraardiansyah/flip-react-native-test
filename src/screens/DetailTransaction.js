@@ -59,6 +59,7 @@ const DetailTransaction = ({route}) => {
         <View style={styles.idContent}>
           <Text style={styles.title}>ID TRANSAKSI: #{item.id} </Text>
           <Text style={styles.iconRotate}>
+            {/* clipboard icon */}
             <MaterialCommunityIcons
               name="content-copy"
               color="#F56A37"
@@ -75,13 +76,14 @@ const DetailTransaction = ({route}) => {
         <View style={styles.divider1} />
         <View style={styles.collapseContent}>
           <Text style={styles.title}>DETAIL TRANSAKSI</Text>
+          {/* collapse trigger */}
           <Text onPress={collapseAction} style={styles.collapseText}>
             {collapse ? 'Tutup' : 'Buka'}
           </Text>
         </View>
         <View style={styles.divider2} />
 
-        {/* detail info */}
+        {/* collapse components */}
         <Animated.View style={[styles.detailContent, {height: collapseDetail}]}>
           <View style={styles.detailSubContent}>
             {/* bank flow */}
@@ -91,6 +93,7 @@ const DetailTransaction = ({route}) => {
               {upperCaseBankName(item.beneficiary_bank)}
             </Text>
             <View style={styles.space1} />
+            {/* detail info */}
             <View style={styles.detailInfo}>
               <View>
                 <Text style={styles.subTitle}>

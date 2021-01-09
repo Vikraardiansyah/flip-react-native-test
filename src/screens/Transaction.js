@@ -77,6 +77,7 @@ const Transaction = () => {
     }
   };
 
+  // handle search
   useEffect(() => {
     if (transactionData.length > 0) {
       setIsLoading(true);
