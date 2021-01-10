@@ -14,7 +14,7 @@
 
 ## Screenshots
 <div align="center">
-    <img width="250" src="./ss/home.jpg">
+    <img width="250" src="./ss/transaction.jpg">
     <img width="250" src="./ss/search.jpg">
     <img width="250" src="./ss/sort.jpg">
     <img width="250" src="./ss/detail.jpg">
