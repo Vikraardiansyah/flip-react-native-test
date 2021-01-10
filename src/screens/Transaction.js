@@ -35,6 +35,8 @@ const Transaction = () => {
       setTransactionData(Object.values(data));
       setTemporaryTransactionData(Object.values(data));
       setModifiedTransactionData(Object.values(data));
+      setSortValue('URUTKAN');
+      setSearchValue('');
 
       setIsLoading(false);
       setIsRefresh(false);
@@ -82,7 +84,6 @@ const Transaction = () => {
     if (transactionData.length > 0) {
       setIsLoading(true);
       const delayDebounce = setTimeout(() => {
-        console.log('search render');
         if (searchValue === '') {
           setModifiedTransactionData(transactionData);
           setIsSearch(false);
@@ -100,7 +101,7 @@ const Transaction = () => {
       }, 500);
       return () => clearTimeout(delayDebounce);
     }
-  }, [searchValue, transactionData]);
+  }, [searchValue]);
 
   const renderItem = ({item, index}) => (
     // card transaction
@@ -119,6 +120,7 @@ const Transaction = () => {
       <KeyboardAvoidingView style={styles.main}>
         {/* search bar */}
         <SearchBar
+          searchValue={searchValue}
           setSearchValue={setSearchValue}
           sortValue={sortValue}
           setModalVisible={setModalVisible}

@@ -3,7 +3,12 @@ import {View, TextInput, Text, Pressable, StyleSheet} from 'react-native';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Feather from 'react-native-vector-icons/Feather';
 
-const SearchBar = ({sortValue, setSearchValue, setModalVisible}) => {
+const SearchBar = ({
+  searchValue,
+  sortValue,
+  setSearchValue,
+  setModalVisible,
+}) => {
   return (
     <View style={styles.searchContent}>
       {/* search icon */}
@@ -15,6 +20,7 @@ const SearchBar = ({sortValue, setSearchValue, setModalVisible}) => {
       />
       {/* input */}
       <TextInput
+        value={searchValue}
         style={styles.searchInput}
         placeholder="Cari nama, bank, atau nominal"
         returnKeyType="search"
